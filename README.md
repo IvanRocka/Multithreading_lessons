@@ -1,3 +1,4 @@
 First part of multithreading exercise. 
-This is a ToyBank which has 5 clients who can make payment or credit deals, 
-one frontal system which could providing request for back bank system throw two client handlers.
+This is a ToyBank which has 5 clients who can make payment or credit transactions, 
+one frontal system that can providing requests for the back bank system using two client handlers.
+
