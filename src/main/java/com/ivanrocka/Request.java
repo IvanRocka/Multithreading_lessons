@@ -1,11 +1,13 @@
 package main.java.com.ivanrocka;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 public class Request {
     private final String clientName;
-    private final double amount;
-    private final OPERATION operation;
+    private final long amount;
+    private final Operation operation;
 
-    public Request(String clientName, double amount, OPERATION operation) {
+    public Request(String clientName, long amount, Operation operation) {
         this.clientName = clientName;
         this.amount = amount;
         this.operation = operation;
@@ -15,11 +17,11 @@ public class Request {
         return clientName;
     }
 
-    public OPERATION getOperation() {
+    public Operation getOperation() {
         return operation;
     }
 
-    public double getAmount() {
+    public long getAmount() {
         return amount;
     }
 

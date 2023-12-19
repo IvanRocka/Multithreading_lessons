@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Client implements Runnable {
     private String clientName;
-    private OPERATION operationType;
-    private double cash;
+    private Operation operationType;
+    private long cash;
     private FrontalSystem frontalSystem;
 
-    public Client(String name, OPERATION operationType, FrontalSystem frontalSystem) {
+    public Client(String name, Operation operationType, FrontalSystem frontalSystem) {
         this.clientName = name;
         this.operationType = operationType;
         this.frontalSystem = frontalSystem;
@@ -16,7 +16,7 @@ public class Client implements Runnable {
 
     @Override
     public void run() {
-        this.cash = new Random().nextDouble() * 1000;
+        this.cash = new Random().nextInt(10) * 990;
         try {
             frontalSystem.addRequest(new Request(clientName,cash,operationType));
         } catch (InterruptedException e) {

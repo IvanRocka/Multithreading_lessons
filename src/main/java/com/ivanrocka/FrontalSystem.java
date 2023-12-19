@@ -4,26 +4,19 @@ import java.util.ArrayDeque;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Queue;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class FrontalSystem {
     private final int REQUEST_QUEUE_SIZE = 2;
-    private ArrayDeque<Request> requestQueue = new ArrayDeque<>(REQUEST_QUEUE_SIZE);
+    private ArrayBlockingQueue<Request> requestQueue = new ArrayBlockingQueue<>(REQUEST_QUEUE_SIZE);
 
-    public synchronized void addRequest(Request request) throws InterruptedException {
-        while (requestQueue.size() > 2) {
-            wait();
-        }
-        requestQueue.add(request);
-        System.out.println(request.toString());
-        notifyAll();
+    public void addRequest(Request request) throws InterruptedException {
+            requestQueue.put(request);
+            System.out.println(request.toString());
     }
 
-    public synchronized Request getRequest() throws InterruptedException {
-        while (requestQueue.isEmpty()) {
-            wait();
-        }
-        var receivedRequest = requestQueue.poll();
-        notifyAll();
-        return receivedRequest;
+    public  Request getRequest() throws InterruptedException {
+            var receivedRequest = requestQueue.take();
+            return receivedRequest;
     }
 }

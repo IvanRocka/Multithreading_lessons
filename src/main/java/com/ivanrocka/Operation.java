@@ -1,6 +1,6 @@
 package main.java.com.ivanrocka;
 
-public enum OPERATION {
+public enum Operation {
     CREDIT,
     PAYMENT
 }
