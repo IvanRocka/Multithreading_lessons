@@ -3,9 +3,9 @@ package main.java.com.ivanrocka;
 public class Request {
     private final String clientName;
     private final double amount;
-    private final OPERATION operation;
+    private final Operation operation;
 
-    public Request(String clientName, double amount, OPERATION operation) {
+    public Request(String clientName, double amount, Operation operation) {
         this.clientName = clientName;
         this.amount = amount;
         this.operation = operation;
@@ -15,7 +15,7 @@ public class Request {
         return clientName;
     }
 
-    public OPERATION getOperation() {
+    public Operation getOperation() {
         return operation;
     }
 

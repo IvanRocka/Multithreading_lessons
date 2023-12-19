@@ -4,11 +4,11 @@ import java.util.Random;
 
 public class Client implements Runnable {
     private String clientName;
-    private OPERATION operationType;
+    private Operation operationType;
     private double cash;
     private FrontalSystem frontalSystem;
 
-    public Client(String name, OPERATION operationType, FrontalSystem frontalSystem) {
+    public Client(String name, Operation operationType, FrontalSystem frontalSystem) {
         this.clientName = name;
         this.operationType = operationType;
         this.frontalSystem = frontalSystem;

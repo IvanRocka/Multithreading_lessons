@@ -10,11 +10,11 @@ public class ToyBank {
         Thread clientHandler_1 = new Thread(new ClientHandler(frontalSystem,"1",backBankSystem));
         Thread clientHandler_2 = new Thread(new ClientHandler(frontalSystem,"2",backBankSystem));
 
-        Thread client_1 = new Thread(new Client("Клиент №1", OPERATION.CREDIT, frontalSystem));
-        Thread client_2 = new Thread(new Client("Клиент №2", OPERATION.PAYMENT, frontalSystem));
-        Thread client_3 = new Thread(new Client("Клиент №3", OPERATION.CREDIT, frontalSystem));
-        Thread client_4 = new Thread(new Client("Клиент №4", OPERATION.PAYMENT, frontalSystem));
-        Thread client_5 = new Thread(new Client("Клиент №5", OPERATION.CREDIT, frontalSystem));
+        Thread client_1 = new Thread(new Client("Клиент №1", Operation.CREDIT, frontalSystem));
+        Thread client_2 = new Thread(new Client("Клиент №2", Operation.PAYMENT, frontalSystem));
+        Thread client_3 = new Thread(new Client("Клиент №3", Operation.CREDIT, frontalSystem));
+        Thread client_4 = new Thread(new Client("Клиент №4", Operation.PAYMENT, frontalSystem));
+        Thread client_5 = new Thread(new Client("Клиент №5", Operation.CREDIT, frontalSystem));
 
 
         client_1.start();
